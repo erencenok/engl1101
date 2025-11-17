@@ -47,9 +47,11 @@ For more than a century, Piedmont Park has been at the center of Atlanta’s gro
     """)
 
     st.image("media/IMG_7936.jpeg")
-    st.write("** Sources**:
-             - https://www.georgiaencyclopedia.org/articles/geography-environment/piedmont-park/
-             - https://www.piedmontpark.org/history/")
+    st.write("""
+**Sources:**
+- https://www.georgiaencyclopedia.org/articles/geography-environment/piedmont-park/
+- https://www.piedmontpark.org/history/
+""")
 
 
 # ---------------------- ECOLOGY ----------------------
