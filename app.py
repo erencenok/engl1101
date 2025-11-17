@@ -26,7 +26,7 @@ if page == "Home":
     Explore Piedmont Park through history, ecology, culture, videos, and interactive maps.
     """)
 
-    st.image("images/piedmont.jpeg", use_column_width=True)
+    st.image("media/IMG_7960.jpeg", use_column_width=True)
 
 
 # ---------------------- HISTORY ----------------------
