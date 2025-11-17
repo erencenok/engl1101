@@ -69,7 +69,7 @@ elif page == "Culture":
     Piedmont Park is home to Atlanta’s largest events, markets, concerts, and neighborhood traditions.
     """)
 
-    st.image("media/IMG_7929.mp4")   # This can be changed to an image later
+    st.video("media/IMG_7929.mp4")   # This can be changed to an image later
 
 
 # ---------------------- INTERACTIVE MAP ----------------------
