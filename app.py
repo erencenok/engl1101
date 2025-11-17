@@ -59,10 +59,28 @@ elif page == "Ecology":
     st.title("🌿 Ecology & Environmental Features")
 
     st.write("""
-    Piedmont Park supports diverse wildlife, native trees, restored wetlands, and lake ecosystems.
-    """)
+Piedmont Park in Atlanta, Georgia, is more than just expansive lawns with a skyline view of the city; it's a rich ecological space nestled in the heart of a densely urbanized area. It covers over 200 acres in Midtown and is called “Atlanta’s green heart” due to its size and its role in cooling the city by filtering air and providing habitat for wildlife.
 
-    st.image("media/IMG_7960.jpeg")
+Ecologically, one of the park’s most important features is its variety of habitats. These include open meadows, shaded oak and hardwood groves, gardens, woodland patches, and the man-made Lake Clara Meer. Together, they form a mosaic of microhabitats that support a wide range of organisms. Recent tree-planting efforts have added dozens of native trees—74 in a single 2020 project—especially near Oak Hill, the Meadow, and the dog parks. These trees reduce temperatures, improve air quality, store carbon, and provide food and nesting sites for birds, squirrels, chipmunks, and other wildlife.
+
+Lake Clara Meer plays a central role in the park’s ecology. Although artificial, it functions like an urban wetland, supporting ducks, herons, turtles, fish, insects, and other aquatic life that form the base of a complex food web. A wooden boardwalk allows visitors to experience this habitat without disturbing its sensitive shoreline.
+
+Piedmont Park is also one of Atlanta’s most significant urban bird habitats. Local birders have documented around 180 species over the decades. Native species like Carolina Chickadees stay year-round, while migratory warblers and kinglets arrive during spring and fall. Winter visitors include Tufted Titmice, Ruby-crowned Kinglets, Carolina Wrens, and Eastern Phoebes, making the park ecologically active even in colder months.
+
+The meadows and gardens add another dimension of ecological value. Collaborations with organizations such as Trees Atlanta have introduced native grasses and wildflowers, creating pollinator-friendly meadows that support bees, butterflies, and other insects—vital at a time of global pollinator decline.
+
+All of this exists within the broader context of Atlanta’s changing urban ecology. As development expands and forests shrink, Piedmont Park serves as an essential refuge for species that might otherwise disappear from the city. The Piedmont Park Conservancy and the City of Atlanta emphasize these ecological functions as part of a long-term strategy to maintain biodiversity and ecosystem services.
+
+Overall, Piedmont Park is shaped by both natural processes and deliberate restoration efforts. From lake remediation to meadow creation and extensive tree planting, the park has become a thriving ecosystem in the center of a rapidly growing city—demonstrating that urban green spaces can support deep ecological life alongside recreation and community activity.
+""")
+
+    st.image("media/IMG_7960.jpeg")  # You can change this to any ecology photo you want
+
+    st.write("""
+**Sources:**
+- Piedmont Park Conservancy — https://piedmontpark.org/about-us/
+- Discover Atlanta — https://discoveratlanta.com/things-to-do/outdoors/piedmont-park/
+""")
 
 
 # ---------------------- CULTURE ----------------------
