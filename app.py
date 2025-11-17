@@ -3,6 +3,7 @@ import folium
 from streamlit_folium import st_folium
 import qrcode
 from io import BytesIO
+import os
 
 st.set_page_config(
     page_title="Discover Piedmont Park",
@@ -46,7 +47,7 @@ elif page == "History":
     - **1990s–present:** Restoration & expansion  
     """)
 
-    st.image("images/history_photo.jpg")
+    st.image("media/IMG_7936.jpeg")
 
 
 # ---------------------- ECOLOGY ----------------------
@@ -57,7 +58,7 @@ elif page == "Ecology":
     Piedmont Park supports diverse wildlife, native trees, restored wetlands, and lake ecosystems.
     """)
 
-    st.image("images/ecology_photo.jpg")
+    st.image("media/IMG_7960.jpeg")   # You can change this to any media file
 
 
 # ---------------------- CULTURE ----------------------
@@ -68,7 +69,7 @@ elif page == "Culture":
     Piedmont Park is home to Atlanta’s largest events, markets, concerts, and neighborhood traditions.
     """)
 
-    st.image("images/culture_photo.jpg")
+    st.image("media/IMG_7929.mp4")   # This can be changed to an image later
 
 
 # ---------------------- INTERACTIVE MAP ----------------------
@@ -82,22 +83,26 @@ elif page == "Interactive Map":
 
     # --- Attraction Markers ---
     attractions = {
-        "Lake Clara Meer": (33.7856, -84.3720),
-        "Active Oval": (33.7837, -84.3769),
-        "The Meadow": (33.7859, -84.3752),
-        "Dog Park": (33.7869, -84.3710)
+        "Lake Clara Meer": (33.7860, -84.3723),
+        "Active Oval": (33.7842, -84.3767),
+        "The Meadow": (33.7862, -84.3748),
+        "Dog Park": (33.7871, -84.3714)
     }
 
     for name, loc in attractions.items():
-        folium.Marker(loc, popup=name, tooltip=name,
-                      icon=folium.Icon(color="green", icon="info-sign")).add_to(m)
+        folium.Marker(
+            loc,
+            popup=name,
+            tooltip=name,
+            icon=folium.Icon(color="green", icon="info-sign")
+        ).add_to(m)
 
     # --- WALKING ROUTE (Polyline) ---
     walking_route = [
-        (33.7859, -84.3752),  # Meadow
-        (33.7856, -84.3720),  # Lake Clara Meer
-        (33.7863, -84.3705),  # Dog Park area
-        (33.7837, -84.3769)   # Active Oval
+        (33.7862, -84.3748),  # Meadow
+        (33.7860, -84.3723),  # Lake Clara Meer
+        (33.7871, -84.3714),  # Dog Park
+        (33.7842, -84.3767)   # Active Oval
     ]
 
     folium.PolyLine(
@@ -115,12 +120,13 @@ elif page == "Interactive Map":
 # ---------------------- VIDEOS ----------------------
 elif page == "Videos":
     st.title("🎥 Video Collection")
-
     st.write("Short videos showcasing the nature, wildlife, and atmosphere of Piedmont Park.")
 
-    st.video("YOUR_YOUTUBE_LINK_1")
-    st.video("YOUR_YOUTUBE_LINK_2")
-    st.video("YOUR_YOUTUBE_LINK_3")
+    # Auto-load all MP4s in media folder
+    video_files = [f for f in os.listdir("media") if f.lower().endswith(".mp4")]
+
+    for video in sorted(video_files):
+        st.video(f"media/{video}")
 
 
 # ---------------------- BROCHURE ----------------------
@@ -129,10 +135,10 @@ elif page == "Brochure":
 
     st.write("Download the printed brochure designed for visiting Piedmont Park.")
 
-    with open("brochure/brochure.pdf", "rb") as pdf:
-        st.download_button("Download Brochure", pdf, file_name="PiedmontPark_Brochure.pdf")
+    st.info("Arianna will provide the PDF. Upload it to brochure/brochure.pdf")
 
-    st.image("images/brochure_preview.png")
+    # Placeholder until brochure is added
+    st.write("📄 Brochure coming soon!")
 
 
 # ---------------------- TEAM PAGE ----------------------
@@ -146,17 +152,17 @@ elif page == "Team":
     with col1:
         st.subheader("Eren")
         st.write("Website development, interactive map, and design.")
-        st.image("images/eren.jpg", caption="Eren", width=200)
+        st.write("📸 Photo coming soon.")
 
     with col2:
         st.subheader("Lara")
         st.write("Video creation, environmental footage, narration.")
-        st.image("images/lara.jpg", caption="Lara", width=200)
+        st.write("📸 Photo coming soon.")
 
     with col3:
         st.subheader("Arianna")
         st.write("Brochure design, cultural research, layout.")
-        st.image("images/arianna.jpg", caption="Arianna", width=200)
+        st.write("📸 Photo coming soon.")
 
 
 # ---------------------- QR CODE GENERATOR ----------------------
