@@ -99,11 +99,12 @@ elif page == "Interactive Map":
 
     # --- WALKING ROUTE (Polyline) ---
     walking_route = [
-        (33.7862, -84.3748),  # Meadow
-        (33.7860, -84.3723),  # Lake Clara Meer
-        (33.7871, -84.3714),  # Dog Park
-        (33.7842, -84.3767)   # Active Oval
-    ]
+    (33.78339296107428, -84.37157950990911),  # The Meadow
+    (33.784089977396995, -84.37297344943022), # Lake Clara Meer
+    (33.78819038380616,  -84.3709058638687),  # Dog Park
+    (33.789986280083774, -84.37252046600035), # Atlanta Botanical Garden
+    (33.786417322689346, -84.37607408312104)  # Active Oval
+]
 
     folium.PolyLine(
         walking_route,
