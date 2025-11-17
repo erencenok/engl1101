@@ -88,10 +88,89 @@ elif page == "Culture":
     st.title("🎭 Cultural Significance")
 
     st.write("""
-    Piedmont Park is home to Atlanta’s largest events, markets, concerts, and neighborhood traditions.
-    """)
+Alongside weekly pop-up events, Piedmont Park is the home of annual traditions and festivals in Midtown. These celebrations highlight the art, music, and diverse people that contribute to the heartbeat of Atlanta — and many are completely free!
 
-    st.video("media/IMG_7929.mp4")
+---
+
+## 🌸 Atlanta Dogwood Festival (April)
+The Atlanta Dogwood Festival is an arts and crafts festival held each spring, approaching its 90th year of celebration. It coincides with the blooming of the native dogwood trees and is known for:
+
+- A renowned fine arts Artist Market  
+- Local and international musical performances  
+- High school art exhibitions  
+- Food vendors and family-friendly activities  
+
+**Image description:**  
+*(left)* Booths and crowds in Piedmont Park with the Atlanta skyline in the background.  
+*(right)* Close-up of white dogwood flowers.
+
+---
+
+## 🎷 Atlanta Jazz Festival (May)
+Atlanta has a deep jazz history dating back to the early 20th century. Today, the Atlanta Jazz Festival is one of the largest free jazz festivals in the U.S., taking place every Memorial Day weekend. Leading up to the festival:
+
+- Rooftop concerts  
+- Restaurant performances  
+- Pop-up jazz events throughout the city  
+
+**Image description:**  
+*(left)* Daytime crowd and stage design from the 2024 festival.  
+*(right)* A singer, pianist, drummer, and guitarist performing under dramatic red and white lights.
+
+---
+
+## 🎨 Piedmont Park Arts Festival (August)
+A 2-day outdoor celebration featuring up to **250 visual artists**, including:
+
+- Photographers  
+- Sculptors  
+- Glass blowers  
+- Painters  
+- Craft makers  
+
+The festival also hosts artist demonstrations, activities for children, and even benefits local arts charities.
+
+**Image description:**  
+A woman examining artwork inside a booth at the Arts Festival.
+
+---
+
+## 🎸 Shaky Knees Festival (September)
+Hosted annually since 2013, Shaky Knees moved to Piedmont Park for the first time in 2025. The multi-day rock festival featured major headliners including:
+
+- Deftones  
+- My Chemical Romance  
+- Blink-182  
+
+**Image description:**  
+*(left)* Aerial view of massive festival crowds with the Atlanta skyline.  
+*(right)* Night concert scene with purple lights and the Bank of America Plaza glowing in the background.
+
+---
+
+## 🌈 Atlanta Pride & Atlanta Black Pride (September–October)
+Atlanta Pride has taken place since 1970 and is one of the **largest free Pride festivals in the U.S.**, hosted in Piedmont Park every October.  
+Atlanta Black Pride — held on Labor Day weekend — is one of the **largest Black LGBTQIA+ celebrations in the world**, featuring:
+
+- The Pure Heat Community Festival  
+- Performances and events across the city  
+
+**Image description:**  
+*(left)* Pride march with a giant rainbow flag at the front.  
+*(right)* Close-up of Pride participants with balloon wings and rainbow headbands.
+
+---
+
+### **Sources**
+- https://dogwood.org/  
+- https://atljazzfest.com/  
+- https://www.blueskyatlanta.com/blogs/rhythms-resilience-soulful-journey-jazz-and-blues-atlanta  
+- https://piedmontparkartsfestival.com/  
+- https://www.atlantanewsfirst.com/2025/09/20/shaky-knees-2025-kicks-off-piedmont-park/  
+- https://www.atlantahistorycenter.com/blog/a-history-of-pride-parades-in-atlanta/  
+- https://atlantapride.org/2025/10/08/atlanta-pride-largest-free-pride-festival-in-the-u-s/  
+- https://www.ajc.com/events/festivals/ultimate-guide-black-gay-pride-weekend-2019/5yu1cgbd3MTkZC59cAkDQO/  
+""")
 
 
 # ---------------------- INTERACTIVE MAP ----------------------
