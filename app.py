@@ -82,10 +82,11 @@ elif page == "Interactive Map":
 
     # --- Attraction Markers ---
     attractions = {
-        "Lake Clara Meer": (33.7860, -84.3723),
-        "Active Oval": (33.7842, -84.3767),
-        "The Meadow": (33.7862, -84.3748),
-        "Dog Park": (33.7871, -84.3714)
+        "Lake Clara Meer": (33.784089977396995, -84.37297344943022),
+        "Active Oval": (33.786417322689346, -84.37607408312104),
+        "The Meadow": (33.78339296107428, -84.37157950990911),
+        "Dog Park": (33.78819038380616, -84.3709058638687),
+        "Atlanta Botanical Garden": (33.789986280083774, -84.37252046600035)
     }
 
     for name, loc in attractions.items():
