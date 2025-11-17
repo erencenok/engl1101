@@ -122,8 +122,6 @@ The Piedmont Park Arts Festival is a two-day outdoor celebration of visual arts 
 250 artists, live demonstrations, local food vendors, and children’s activities. It is one of Midtown’s 
 most beloved art-focused events.
 """)
-    st.info("🖼️ Add an image for the Arts Festival by placing it in /media and sending me the filename.")
-
     st.markdown("---")
 
     # ---------------- Shaky Knees ----------------
