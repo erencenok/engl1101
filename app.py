@@ -89,11 +89,11 @@ elif page == "Interactive Map":
         "Atlanta Botanical Garden": (33.789986280083774, -84.37252046600035)
     }
 
-lake_img = "piedmont-park-running-trail-03.jpg"
-oval_img = "Active-Oval-Players-72-dpi-e1553012197950.jpg"
-meadow_img = "Unknown.jpeg"
-dog_img = "Unknown-1.jpeg"
-garden_img = "Unknown-2.jpeg"
+    lake_img = "piedmont-park-running-trail-03.jpg"
+    oval_img = "Active-Oval-Players-72-dpi-e1553012197950.jpg"
+    meadow_img = "Unknown.jpeg"
+    dog_img = "Unknown-1.jpeg"
+    garden_img = "Unknown-2.jpeg"
 
 # Lake Clara Meer
 folium.Marker(
