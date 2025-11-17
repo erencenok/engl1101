@@ -74,7 +74,6 @@ elif page == "Culture":
 # ---------------------- INTERACTIVE MAP ----------------------
 elif page == "Interactive Map":
     st.title("🗺️ Interactive Map & Walking Routes")
-
     st.write("Explore the park using an interactive walking-route trail map.")
 
     # Map center
@@ -89,70 +88,67 @@ elif page == "Interactive Map":
         "Atlanta Botanical Garden": (33.789986280083774, -84.37252046600035)
     }
 
-    lake_img = "piedmont-park-running-trail-03.jpg"
-    oval_img = "Active-Oval-Players-72-dpi-e1553012197950.jpg"
-    meadow_img = "Unknown.jpeg"
-    dog_img = "Unknown-1.jpeg"
-    garden_img = "Unknown-2.jpeg"
+    # ---------- IMAGE LINKS (must be raw GitHub URLs) ----------
+    lake_img = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/media/piedmont-park-running-trail-03.jpg"
+    oval_img = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/media/Active-Oval-Players-72-dpi-e1553012197950.jpg"
+    meadow_img = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/media/Unknown.jpeg"
+    dog_img = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/media/Unknown-1.jpeg"
+    garden_img = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/media/Unknown-2.jpeg"
 
-# Lake Clara Meer
-folium.Marker(
-    (33.784089977396995, -84.37297344943022),
-    tooltip="Lake Clara Meer",
-    popup=folium.Popup(
-        html=f"<img src='{lake_img}' width='200'><br><b>Lake Clara Meer</b>",
-        max_width=250
-    )
-).add_to(m)
+    # ---------- MARKERS WITH POPUP PHOTOS ----------
+    folium.Marker(
+        (33.784089977396995, -84.37297344943022),
+        tooltip="Lake Clara Meer",
+        popup=folium.Popup(
+            html=f"<img src='{lake_img}' width='200'><br><b>Lake Clara Meer</b>",
+            max_width=250
+        )
+    ).add_to(m)
 
-# Active Oval
-folium.Marker(
-    (33.786417322689346, -84.37607408312104),
-    tooltip="Active Oval",
-    popup=folium.Popup(
-        html=f"<img src='{oval_img}' width='200'><br><b>Active Oval</b>",
-        max_width=250
-    )
-).add_to(m)
+    folium.Marker(
+        (33.786417322689346, -84.37607408312104),
+        tooltip="Active Oval",
+        popup=folium.Popup(
+            html=f"<img src='{oval_img}' width='200'><br><b>Active Oval</b>",
+            max_width=250
+        )
+    ).add_to(m)
 
-# Meadow
-folium.Marker(
-    (33.78339296107428, -84.37157950990911),
-    tooltip="The Meadow",
-    popup=folium.Popup(
-        html=f"<img src='{meadow_img}' width='200'><br><b>The Meadow</b>",
-        max_width=250
-    )
-).add_to(m)
+    folium.Marker(
+        (33.78339296107428, -84.37157950990911),
+        tooltip="The Meadow",
+        popup=folium.Popup(
+            html=f"<img src='{meadow_img}' width='200'><br><b>The Meadow</b>",
+            max_width=250
+        )
+    ).add_to(m)
 
-# Dog Park
-folium.Marker(
-    (33.78819038380616, -84.3709058638687),
-    tooltip="Dog Park",
-    popup=folium.Popup(
-        html=f"<img src='{dog_img}' width='200'><br><b>Dog Park</b>",
-        max_width=250
-    )
-).add_to(m)
+    folium.Marker(
+        (33.78819038380616, -84.3709058638687),
+        tooltip="Dog Park",
+        popup=folium.Popup(
+            html=f"<img src='{dog_img}' width='200'><br><b>Dog Park</b>",
+            max_width=250
+        )
+    ).add_to(m)
 
-# Botanical Garden
-folium.Marker(
-    (33.789986280083774, -84.37252046600035),
-    tooltip="Atlanta Botanical Garden",
-    popup=folium.Popup(
-        html=f"<img src='{garden_img}' width='200'><br><b>Atlanta Botanical Garden</b>",
-        max_width=250
-    )
-).add_to(m)
+    folium.Marker(
+        (33.789986280083774, -84.37252046600035),
+        tooltip="Atlanta Botanical Garden",
+        popup=folium.Popup(
+            html=f"<img src='{garden_img}' width='200'><br><b>Atlanta Botanical Garden</b>",
+            max_width=250
+        )
+    ).add_to(m)
 
-    # --- WALKING ROUTE (Polyline) ---
+    # ---------- WALKING ROUTE ----------
     walking_route = [
-    (33.78339296107428, -84.37157950990911),  # The Meadow
-    (33.784089977396995, -84.37297344943022), # Lake Clara Meer
-    (33.78819038380616,  -84.3709058638687),  # Dog Park
-    (33.789986280083774, -84.37252046600035), # Atlanta Botanical Garden
-    (33.786417322689346, -84.37607408312104)  # Active Oval
-]
+        (33.78339296107428, -84.37157950990911),  # The Meadow
+        (33.784089977396995, -84.37297344943022), # Lake Clara Meer
+        (33.78819038380616,  -84.3709058638687),  # Dog Park
+        (33.789986280083774, -84.37252046600035), # Atlanta Botanical Garden
+        (33.786417322689346, -84.37607408312104)  # Active Oval
+    ]
 
     folium.PolyLine(
         walking_route,
