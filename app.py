@@ -80,7 +80,7 @@ elif page == "Interactive Map":
     m = folium.Map(location=[33.7851, -84.3738], zoom_start=15, tiles="CartoDB positron")
 
     # ---------- RAW GITHUB IMAGE URLS (REPLACE THESE) ----------
-    lake_img = "RAW_URL_1"
+    lake_img = "piedmont-park-running-trail-03.jpg"
     oval_img = "RAW_URL_2"
     meadow_img = "RAW_URL_3"
     dog_img = "RAW_URL_4"
