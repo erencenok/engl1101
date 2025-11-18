@@ -240,11 +240,13 @@ elif page == "Brochure":
 
     st.write("Download the printed brochure designed for visiting Piedmont Park.")
 
+    pdf_path = "media/Discover_Piedmont_Park.pdf"   # <-- replace with your final filename
+
     try:
-        with open("media/Discover_Piedmont_Park.pdf", "rb") as pdf:
+        with open(pdf_path, "rb") as pdf:
             st.download_button(
-                "📥 Download Brochure",
-                pdf,
+                label="📥 Download Brochure",
+                data=pdf,
                 file_name="Discover_Piedmont_Park.pdf",
                 mime="application/pdf"
             )
@@ -252,7 +254,7 @@ elif page == "Brochure":
         st.success("Brochure is ready for download!")
 
     except FileNotFoundError:
-        st.error("❌ Brochure file not found. Make sure it is uploaded to brochure/Discover_Piedmont_Park.pdf")
+        st.error("❌ Brochure file not found. Make sure the PDF is inside the media/ folder.")
 
 
 # ---------------------- TEAM PAGE ----------------------
