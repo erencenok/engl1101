@@ -241,7 +241,7 @@ elif page == "Brochure":
     st.write("Download the printed brochure designed for visiting Piedmont Park.")
 
     try:
-        with open("brochure/Discover_Piedmont_Park.pdf", "rb") as pdf:
+        with open("media/Discover_Piedmont_Park.pdf", "rb") as pdf:
             st.download_button(
                 "📥 Download Brochure",
                 pdf,
