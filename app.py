@@ -239,8 +239,20 @@ elif page == "Brochure":
     st.title("📄 Tri-Fold Brochure")
 
     st.write("Download the printed brochure designed for visiting Piedmont Park.")
-    st.info("Arianna will provide the PDF. Upload it to brochure/brochure.pdf")
-    st.write("📄 Brochure coming soon!")
+
+    try:
+        with open("brochure/Discover_Piedmont_Park.pdf", "rb") as pdf:
+            st.download_button(
+                "📥 Download Brochure",
+                pdf,
+                file_name="Discover_Piedmont_Park.pdf",
+                mime="application/pdf"
+            )
+
+        st.success("Brochure is ready for download!")
+
+    except FileNotFoundError:
+        st.error("❌ Brochure file not found. Make sure it is uploaded to brochure/Discover_Piedmont_Park.pdf")
 
 
 # ---------------------- TEAM PAGE ----------------------
