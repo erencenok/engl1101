@@ -323,7 +323,7 @@ elif page == "Interactive Map":
     # Dockside → lakeside dirt path → Midtown Reflection View
     # ----------------------------------------------------
 
-        erens_route = [
+    erens_route = [
         (33.7841148168333, -84.37711797555849),   # Dockside
         (33.783900, -84.376300),                  # lower path
         (33.783750, -84.375300),                  # hugging lake edge
