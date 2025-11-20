@@ -167,17 +167,16 @@ community gatherings to the park.
 
 # ---------------------- INTERACTIVE MAP ----------------------
 elif page == "Interactive Map":
-    st.title("🗺️ Interactive Map & Walking Routes")
+    st.title("🗺️ Routes")
+    st.write("Explore Piedmont Park using an interactive map with photos, videos, and walking routes — including Lara’s, Ariana’s, and Eren’s favorite paths.")
 
-    st.write("Explore Piedmont Park using an interactive map with photos, videos, and walking routes — including Lara’s and Eren’s favorite paths.")
-
-    # Create map
     m = folium.Map(location=[33.7851, -84.3738], zoom_start=16, tiles="CartoDB positron")
 
-    # -------------------------------------------
-    # IMAGE POPUPS FOR EACH LOCATION
-    # -------------------------------------------
+    # ----------------------------------------------------
+    # MARKERS WITH POPUPS (add your images into /media)
+    # ----------------------------------------------------
 
+    # Lake Clara Meer
     lake_popup = folium.Popup("""
         <h4>Lake Clara Meer</h4>
         <img src='media/lake.jpg' width='220'>
@@ -191,6 +190,7 @@ elif page == "Interactive Map":
         icon=folium.Icon(color="blue", icon="info-sign")
     ).add_to(m)
 
+    # Active Oval
     oval_popup = folium.Popup("""
         <h4>Active Oval</h4>
         <img src='media/oval.jpg' width='220'>
@@ -204,10 +204,11 @@ elif page == "Interactive Map":
         icon=folium.Icon(color="green", icon="info-sign")
     ).add_to(m)
 
+    # The Meadow
     meadow_popup = folium.Popup("""
         <h4>The Meadow</h4>
         <img src='media/meadow.jpg' width='220'>
-        <p>Sunny open space for relaxing, reading, and picnics.</p>
+        <p>A calm open field perfect for reading, picnics, and skyline views.</p>
     """, max_width=260)
 
     folium.Marker(
@@ -217,10 +218,11 @@ elif page == "Interactive Map":
         icon=folium.Icon(color="orange", icon="info-sign")
     ).add_to(m)
 
+    # Dog Park
     dog_popup = folium.Popup("""
         <h4>Dog Park</h4>
         <img src='media/dog.jpg' width='220'>
-        <p>One of Atlanta’s largest off-leash dog areas.</p>
+        <p>One of Midtown's largest off-leash areas for dogs.</p>
     """, max_width=260)
 
     folium.Marker(
@@ -230,10 +232,11 @@ elif page == "Interactive Map":
         icon=folium.Icon(color="red", icon="info-sign")
     ).add_to(m)
 
+    # Atlanta Botanical Garden
     garden_popup = folium.Popup("""
         <h4>Atlanta Botanical Garden</h4>
         <img src='media/garden.jpg' width='220'>
-        <p>Beautiful curated gardens connected to Piedmont Park.</p>
+        <p>Beautiful curated gardens connected directly to Piedmont Park.</p>
     """, max_width=260)
 
     folium.Marker(
@@ -243,14 +246,27 @@ elif page == "Interactive Map":
         icon=folium.Icon(color="purple", icon="info-sign")
     ).add_to(m)
 
-    # -------------------------------------------
-    # ORIGINAL WALKING ROUTE (blue)
-    # -------------------------------------------
+    # Midtown Reflection View (Eren's ending point)
+    reflection_popup = folium.Popup("""
+        <h4>Midtown Reflection View</h4>
+        <p>Eren's favorite place to watch the skyline reflect on the lake.</p>
+    """, max_width=250)
+
+    folium.Marker(
+        (33.78399315908114, -84.3733409337844),
+        tooltip="Midtown Reflection View",
+        popup=reflection_popup,
+        icon=folium.Icon(color="darkblue", icon="star")
+    ).add_to(m)
+
+    # ----------------------------------------------------
+    # SUGGESTED WALKING ROUTE (BLUE)
+    # ----------------------------------------------------
 
     walking_route = [
-        (33.78339296107428, -84.37157950990911),  
+        (33.78339296107428, -84.37157950990911),
         (33.784089977396995, -84.37297344943022),
-        (33.78819038380616, -84.3709058638687),   
+        (33.78819038380616, -84.3709058638687),
         (33.789986280083774, -84.37252046600035),
         (33.786417322689346, -84.37607408312104)
     ]
@@ -263,14 +279,14 @@ elif page == "Interactive Map":
         opacity=0.7
     ).add_to(m)
 
-    # -------------------------------------------
-    # LARA'S FAVORITE ROUTE (red)
-    # Replace old “Eren’s route”
-    # -------------------------------------------
+    # ----------------------------------------------------
+    # LARA'S FAVORITE ROUTE (RED)
+    # ----------------------------------------------------
+
     laras_route = [
-        (33.784089977396995, -84.37297344943022),  # Lake side
-        (33.785500, -84.373400),                   
-        (33.786417322689346, -84.37607408312104)   # Active Oval
+        (33.784089977396995, -84.37297344943022),
+        (33.785500, -84.373400),
+        (33.786417322689346, -84.37607408312104)
     ]
 
     folium.PolyLine(
@@ -281,16 +297,37 @@ elif page == "Interactive Map":
         opacity=0.9
     ).add_to(m)
 
-    # -------------------------------------------
-    # EREN'S NEW FAVORITE ROUTE (orange)
-    # Dockside → Midtown Reflection Dirt Path
-    # -------------------------------------------
+    # ----------------------------------------------------
+    # ARIANA'S FAVORITE ROUTE (PURPLE)
+    # Botanical Garden → Scenic Hill → Oak Hill → Meadow
+    # ----------------------------------------------------
+
+    arianas_route = [
+        (33.789986280083774, -84.37252046600035),
+        (33.788900, -84.373100),
+        (33.786950, -84.373950),
+        (33.78339296107428, -84.37157950990911)
+    ]
+
+    folium.PolyLine(
+        arianas_route,
+        tooltip="Ariana's Favorite Route",
+        color="purple",
+        weight=4,
+        opacity=0.9
+    ).add_to(m)
+
+    # ----------------------------------------------------
+    # EREN'S FAVORITE ROUTE (ORANGE)
+    # Dockside → lakeside dirt path → Midtown Reflection View
+    # ----------------------------------------------------
 
     erens_route = [
-        (33.7841148168333, -84.37711797555849),  # Dockside start
-        (33.784600, -84.375900),                 # lakeside dirt path
-        (33.784350, -84.374800),                 # cherry tree slope
-        (33.78399315908114, -84.3733409337844)   # Midtown reflection viewpoint
+        (33.7841148168333, -84.37711797555849),   # Dockside
+        (33.784350, -84.376300),                  # dirt path
+        (33.784250, -84.375300),
+        (33.784100, -84.374400),
+        (33.78399315908114, -84.3733409337844)     # reflection marker
     ]
 
     folium.PolyLine(
@@ -301,27 +338,11 @@ elif page == "Interactive Map":
         opacity=0.9
     ).add_to(m)
 
-    # Render map
+    # ----------------------------------------------------
+    # RENDER MAP
+    # ----------------------------------------------------
+
     st_folium(m, width=1000, height=600)
-        # -------------------------------------------
-    # ARIANA'S FAVORITE ROUTE (purple)
-    # Botanical Garden → Oak Hill → The Meadow
-    # -------------------------------------------
-
-    arianas_route = [
-        (33.789986280083774, -84.37252046600035),  # Botanical Garden entrance
-        (33.788900, -84.373100),                    # Scenic overlook hill
-        (33.786950, -84.373950),                    # Oak Hill
-        (33.78339296107428, -84.37157950990911)     # The Meadow
-    ]
-
-    folium.PolyLine(
-        arianas_route,
-        tooltip="Ariana's Favorite Route",
-        color="purple",
-        weight=4,
-        opacity=0.9
-    ).add_to(m)
 
 
 # ---------------------- VIDEOS ----------------------
