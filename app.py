@@ -46,7 +46,11 @@ For more than a century, Piedmont Park has been at the center of Atlanta’s gro
     - **1990s–present:** Restoration & expansion  
     """)
 
-    st.image("media/IMG_7936.jpeg")
+    st.image(
+    "media/IMG_7936.jpeg",
+    use_column_width=True,
+    caption="Pathway in Piedmont Park"
+)
     st.write("""
 **Sources:**
 - https://www.georgiaencyclopedia.org/articles/geography-environment/piedmont-park/
