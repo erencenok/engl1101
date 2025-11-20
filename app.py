@@ -395,8 +395,8 @@ elif page == "Team":
 
     with col1:
         st.subheader("Eren")
-        st.write("I’m a first-year Computer Engineering student at Georgia Tech. My favorite part of Piedmont Park is walking by Lake Clara Meer and watching the skyline reflect on the water — it’s where I go to unwind, think, and get inspiration for my projects.")
-        st.write("📸 Photo coming soon.")
+        st.write("I’m a first-year Computer Engineering student at Georgia Tech. My favorite part of Piedmont Park is walking by Lake Clara Meer and watching the skyline reflect on the water; it’s where I go to unwind, think, and get inspiration for my projects.")
+        
 
     with col2:
         st.subheader("Lara")
