@@ -406,7 +406,7 @@ elif page == "Team":
         st.subheader("Arianna")
         st.write("I’m a first-year student at Georgia Tech and originally from North Carolina! I enjoy identifying the trees that I can find along the nature trails at Piedmont Park.")
 
-    st.image("media/coolpic.jpg", width=220)
+    st.image("media/coolpic.jpg", width=1000)
 
 # ---------------------- QR CODE GENERATOR ----------------------
 elif page == "QR Generator":
