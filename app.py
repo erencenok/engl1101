@@ -302,11 +302,12 @@ elif page == "Interactive Map":
     # Botanical Garden → Scenic Hill → Oak Hill → Meadow
     # ----------------------------------------------------
 
-    arianas_route = [
-        (33.789986280083774, -84.37252046600035),
-        (33.788900, -84.373100),
-        (33.786950, -84.373950),
-        (33.78339296107428, -84.37157950990911)
+        arianas_route = [
+        (33.789986280083774, -84.37252046600035),  # Botanical Garden
+        (33.788700, -84.373500),                   # lowered to avoid lake
+        (33.787300, -84.374500),                   # Oak Hill path
+        (33.785800, -84.374000),                   # approach meadow safely
+        (33.78339296107428, -84.37157950990911)    # Meadow
     ]
 
     folium.PolyLine(
@@ -322,12 +323,12 @@ elif page == "Interactive Map":
     # Dockside → lakeside dirt path → Midtown Reflection View
     # ----------------------------------------------------
 
-    erens_route = [
+        erens_route = [
         (33.7841148168333, -84.37711797555849),   # Dockside
-        (33.784350, -84.376300),                  # dirt path
-        (33.784250, -84.375300),
-        (33.784100, -84.374400),
-        (33.78399315908114, -84.3733409337844)     # reflection marker
+        (33.783900, -84.376300),                  # lower path
+        (33.783750, -84.375300),                  # hugging lake edge
+        (33.783700, -84.374300),                  # approaching reflection area
+        (33.78399315908114, -84.3733409337844)    # Reflection marker
     ]
 
     folium.PolyLine(
