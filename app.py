@@ -322,7 +322,12 @@ elif page == "Interactive Map":
     # EREN'S FAVORITE ROUTE (ORANGE)
     # Dockside → lakeside dirt path → Midtown Reflection View
     # ----------------------------------------------------
-
+    # Eren's Dockside Start Marker
+    folium.Marker(
+    location=(33.7841148168333, -84.37711797555849),
+    tooltip="Eren’s Favorite Start (Dockside)",
+    icon=folium.Icon(color="blue", icon="star")
+).add_to(m)
     erens_route = [
         (33.7841148168333, -84.37711797555849),   # Dockside
         (33.783900, -84.376300),                  # lower path
