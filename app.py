@@ -388,24 +388,23 @@ elif page == "Brochure":
 # ---------------------- TEAM PAGE ----------------------
 elif page == "Team":
     st.title("👥 Meet the Team")
+
     st.write("Our project was created by Georgia Tech students as part of a multimodal assignment.")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.subheader("Eren")
-        st.write("Website development, interactive map, and design.")
+        st.write("I’m a first-year Computer Engineering student at Georgia Tech. My favorite part of Piedmont Park is walking by Lake Clara Meer and watching the skyline reflect on the water — it’s where I go to unwind, think, and get inspiration for my projects.")
         st.write("📸 Photo coming soon.")
 
     with col2:
         st.subheader("Lara")
-        st.write("Video creation, environmental footage, narration.")
-        st.write("📸 Photo coming soon.")
+        st.write("I am a first-year Biomedical Engineering student at Tech and from Southeast Georgia. The nature in the park and the woodlands remind me of home! So I love being able to go and walk around the park when I feel homesick.")
 
     with col3:
         st.subheader("Arianna")
-        st.write("Brochure design, cultural research, layout.")
-        st.write("📸 Photo coming soon.")
+        st.write("I’m a first-year student at Georgia Tech and originally from North Carolina! I enjoy identifying the trees that I can find along the nature trails at Piedmont Park.")
 
 
 # ---------------------- QR CODE GENERATOR ----------------------
