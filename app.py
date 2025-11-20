@@ -168,56 +168,96 @@ community gatherings to the park.
 # ---------------------- INTERACTIVE MAP ----------------------
 elif page == "Interactive Map":
     st.title("🗺️ Interactive Map & Walking Routes")
-    st.write("Explore the park using an interactive walking-route trail map.")
 
-    # Map center
-    m = folium.Map(location=[33.7851, -84.3738], zoom_start=15, tiles="CartoDB positron")
+    st.write("Explore Piedmont Park using an interactive map with photos, videos, and walking routes — including Eren’s favorite path.")
 
-    # ---------- RAW GITHUB IMAGE URLS (REPLACE THESE) ----------
-    lake_img = "piedmont-park-running-trail-03.jpg"
-    oval_img = "RAW_URL_2"
-    meadow_img = "RAW_URL_3"
-    dog_img = "RAW_URL_4"
-    garden_img = "RAW_URL_5"
+    # Create map
+    m = folium.Map(location=[33.7851, -84.3738], zoom_start=16, tiles="CartoDB positron")
 
-    # ---------- MARKERS WITH POPUP IMAGES ----------
+    # -------------------------------------------
+    # IMAGE/VIDEO POPUPS FOR EACH LOCATION
+    # -------------------------------------------
+
+    # Lake Clara Meer
+    lake_popup = folium.Popup("""
+        <h4>Lake Clara Meer</h4>
+        <img src='media/lake.jpg' width='220'>
+        <p>A peaceful lake with ducks, turtles, and skyline reflections.</p>
+    """, max_width=260)
+
     folium.Marker(
         (33.784089977396995, -84.37297344943022),
         tooltip="Lake Clara Meer",
-        popup=folium.Popup(f"<img src='{lake_img}' width='220'>", max_width=250)
+        popup=lake_popup,
+        icon=folium.Icon(color="blue", icon="info-sign")
     ).add_to(m)
+
+    # Active Oval
+    oval_popup = folium.Popup("""
+        <h4>Active Oval</h4>
+        <img src='media/oval.jpg' width='220'>
+        <p>Running track, recreation fields, and fitness paths.</p>
+    """, max_width=260)
 
     folium.Marker(
         (33.786417322689346, -84.37607408312104),
         tooltip="Active Oval",
-        popup=folium.Popup(f"<img src='{oval_img}' width='220'>", max_width=250)
+        popup=oval_popup,
+        icon=folium.Icon(color="green", icon="info-sign")
     ).add_to(m)
+
+    # The Meadow
+    meadow_popup = folium.Popup("""
+        <h4>The Meadow</h4>
+        <img src='media/meadow.jpg' width='220'>
+        <p>Sunny open space for reading, relaxing, and picnics.</p>
+    """, max_width=260)
 
     folium.Marker(
         (33.78339296107428, -84.37157950990911),
         tooltip="The Meadow",
-        popup=folium.Popup(f"<img src='{meadow_img}' width='220'>", max_width=250)
+        popup=meadow_popup,
+        icon=folium.Icon(color="orange", icon="info-sign")
     ).add_to(m)
+
+    # Dog Park
+    dog_popup = folium.Popup("""
+        <h4>Dog Park</h4>
+        <img src='media/dog.jpg' width='220'>
+        <p>One of the largest off-leash areas in Atlanta.</p>
+    """, max_width=260)
 
     folium.Marker(
         (33.78819038380616, -84.3709058638687),
         tooltip="Dog Park",
-        popup=folium.Popup(f"<img src='{dog_img}' width='220'>", max_width=250)
+        popup=dog_popup,
+        icon=folium.Icon(color="red", icon="info-sign")
     ).add_to(m)
+
+    # Atlanta Botanical Garden
+    garden_popup = folium.Popup("""
+        <h4>Atlanta Botanical Garden</h4>
+        <img src='media/garden.jpg' width='220'>
+        <p>Beautiful curated gardens right next to Piedmont Park.</p>
+    """, max_width=260)
 
     folium.Marker(
         (33.789986280083774, -84.37252046600035),
         tooltip="Atlanta Botanical Garden",
-        popup=folium.Popup(f"<img src='{garden_img}' width='220'>", max_width=250)
+        popup=garden_popup,
+        icon=folium.Icon(color="purple", icon="info-sign")
     ).add_to(m)
 
-    # ---------- WALKING ROUTE ----------
+    # -------------------------------------------
+    # ORIGINAL WALKING ROUTE
+    # -------------------------------------------
+
     walking_route = [
-        (33.78339296107428, -84.37157950990911),  
-        (33.784089977396995, -84.37297344943022),
-        (33.78819038380616, -84.3709058638687),  
-        (33.789986280083774, -84.37252046600035),
-        (33.786417322689346, -84.37607408312104)
+        (33.78339296107428, -84.37157950990911),  # Meadow
+        (33.784089977396995, -84.37297344943022), # Lake Clara Meer
+        (33.78819038380616, -84.3709058638687),   # Dog Park
+        (33.789986280083774, -84.37252046600035), # Botanical Garden
+        (33.786417322689346, -84.37607408312104)  # Active Oval
     ]
 
     folium.PolyLine(
@@ -228,6 +268,26 @@ elif page == "Interactive Map":
         opacity=0.7
     ).add_to(m)
 
+    # -------------------------------------------
+    # EREN'S FAVORITE ROUTE
+    # (customize if you want!)
+    # -------------------------------------------
+
+    erens_route = [
+        (33.784089977396995, -84.37297344943022),  # Lake Clara Meer
+        (33.785500, -84.373400),                    # Boardwalk area
+        (33.786417322689346, -84.37607408312104),  # Active Oval
+    ]
+
+    folium.PolyLine(
+        erens_route,
+        tooltip="Eren's Favorite Route",
+        color="red",
+        weight=4,
+        opacity=0.9
+    ).add_to(m)
+
+    # Render map
     st_folium(m, width=1000, height=600)
 
 
