@@ -26,12 +26,8 @@ if page == "Home":
     st.write("""
     Explore Piedmont Park through history, ecology, culture, videos, and interactive maps.
     """)
-
-    st.image(
-    "media/IMG_7960.jpeg",
-    caption="The Meadow — one of Piedmont Park’s most iconic open spaces.",
-    use_column_width=True
-)
+    st.image("media/IMG_7960.jpeg", use_column_width=True)
+    st.markdown("**The Meadow — a quiet green area with skyline views.**")
 
 
 # ---------------------- HISTORY ----------------------
