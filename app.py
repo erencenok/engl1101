@@ -27,7 +27,11 @@ if page == "Home":
     Explore Piedmont Park through history, ecology, culture, videos, and interactive maps.
     """)
 
-    st.image("media/IMG_7960.jpeg", use_column_width=True, caption="The Meadow")
+    st.image(
+    "media/IMG_7960.jpeg",
+    caption="The Meadow — one of Piedmont Park’s most iconic open spaces.",
+    use_column_width=True
+)
 
 
 # ---------------------- HISTORY ----------------------
