@@ -356,10 +356,24 @@ elif page == "Videos":
     st.title("🎥 Video Collection")
     st.write("Short videos showcasing the nature, wildlife, and atmosphere of Piedmont Park.")
 
-    video_files = [f for f in os.listdir("media") if f.lower().endswith(".mp4")]
+    # Load all MP4s in order
+    video_files = sorted([f for f in os.listdir("media") if f.lower().endswith(".mp4")])
 
-    for video in sorted(video_files):
+    descriptions = [
+        "When exiting the parking garage near the Atlanta Botanical Gardens, you are greeted by this sight.",
+        "Leaving the parking garage to the left and right, there are many paths to take — this video shows the path to the left.",
+        "Enjoy the trees as you walk along the wooden bridge.",
+        "A view of the Meadow in the center of Piedmont Park, where you can walk along the Active Oval.",
+        "The pavilion was constructed to overlook Lake Clara Meer and connect visitors to the Aquatic Center and playgrounds.",
+        "See the sunlight sparkling on Lake Clara Meer. You may also spot ducks swimming on the lake."
+    ]
+
+    # Display each video with its matching description
+    for idx, video in enumerate(video_files):
         st.video(f"media/{video}")
+        if idx < len(descriptions):
+            st.write(f"**Description:** {descriptions[idx]}")
+            st.markdown("---")
 
 
 # ---------------------- BROCHURE ----------------------
