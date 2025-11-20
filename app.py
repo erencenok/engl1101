@@ -78,7 +78,11 @@ All of this exists within the broader context of Atlanta’s changing urban ecol
 Overall, Piedmont Park is shaped by both natural processes and deliberate restoration efforts. From lake remediation to meadow creation and extensive tree planting, the park has become a thriving ecosystem in the center of a rapidly growing city—demonstrating that urban green spaces can support deep ecological life alongside recreation and community activity.
 """)
 
-    st.image("media/IMG_7960.jpeg")  # You can change this to any ecology photo you want
+    st.image(
+    "media/IMG_7960.jpeg",
+    caption="The Meadow — a large open habitat supporting pollinators, birds, and native plants.",
+    use_column_width=True
+)
 
     st.write("""
 **Sources:**
