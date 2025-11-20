@@ -323,13 +323,13 @@ elif page == "Interactive Map":
     # Dockside → lakeside dirt path → Midtown Reflection View
     # ----------------------------------------------------
 
-    erens_route = [
-    (33.784380, -84.376980),     # START — Dockside (corrected)
-    (33.783950, -84.376250),     # lakeside path
-    (33.783780, -84.375350),     # along dirt trail
-    (33.783720, -84.374450),     # approaching reflection area
-    (33.78399315908114, -84.3733409337844)  # END — Reflection point
-]
+        erens_route = [
+        (33.7841148168333, -84.37711797555849),   # Dockside
+        (33.783900, -84.376300),                  # lower path
+        (33.783750, -84.375300),                  # hugging lake edge
+        (33.783700, -84.374300),                  # approaching reflection area
+        (33.78399315908114, -84.3733409337844)    # Reflection marker
+    ]
 
     folium.PolyLine(
         erens_route,
